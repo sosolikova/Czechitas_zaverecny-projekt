@@ -15,27 +15,11 @@ namespace VyberFilmu
         {
             Movies movies = new Movies();
             movies.NactiFilmyZeSouboru();
-            var vylosovaneZeme = movies.NahodnyVyberZemi();
-
             movies.NahodnyVyberZanru();
-            int vybranaVolba = 0;
-            string vybranyZanr = "";
-            do
-            {
-                Console.WriteLine("Vyberte si žánr: \n\t 1. {0} \n\t 2. {1} \n\t 3. Opakování volby", vylosovaneZeme[0], vylosovaneZeme[1]);
-                vybranaVolba = Int32.Parse(Console.ReadLine());
 
-                switch (vybranaVolba)
-                {
-                    case 1:
-                        vybranyZanr = vylosovaneZeme[0];
-                        break;
-                    case 2:
-                        vybranyZanr = vylosovaneZeme[1];
-                        break;
-                }
 
-            } while (vybranyZanr == "");
+            var vylosovaneZeme = movies.NahodnyVyberZemi();
+            string vybranaZemeUzivatelem = VyberUzivateleZeme(vylosovaneZeme);
 
             int volbaMenu = 0;
             do
@@ -60,9 +44,30 @@ namespace VyberFilmu
                         break;
                 }
 
-            } while (volbaMenu !=4);
+            } while (volbaMenu != 4);
+        }
 
+        private static string VyberUzivateleZeme(List<string> vylosovaneZeme)
+        {
+            int vybranaVolba = 0;
+            string vybranyZanr = "";
+            do
+            {
+                Console.WriteLine("Vyberte si žánr: \n\t 1. {0} \n\t 2. {1} \n\t 3. Opakování volby", vylosovaneZeme[0], vylosovaneZeme[1]);
+                vybranaVolba = Int32.Parse(Console.ReadLine());
 
+                switch (vybranaVolba)
+                {
+                    case 1:
+                        vybranyZanr = vylosovaneZeme[0];
+                        break;
+                    case 2:
+                        vybranyZanr = vylosovaneZeme[1];
+                        break;
+                }
+
+            } while (vybranyZanr == "");
+            return vybranyZanr;
         }
     }
 }
