@@ -56,10 +56,10 @@ namespace VyberFilmu
             using (StreamReader r = new StreamReader("Movies.json"))
             {
                 string json = r.ReadToEnd();
-                RootObject film = JsonConvert.DeserializeObject<RootObject>(json);
-                Console.WriteLine($"Bylo nacteno {film.Movies.Count} filmu");
+                DatabazeFilmu databaze = JsonConvert.DeserializeObject<DatabazeFilmu>(json);
+                Console.WriteLine($"Bylo nacteno {databaze.Movies.Count} filmu");
 
-                foreach (Movie item in film.Movies)
+                foreach (Movie item in databaze.Movies)
                 {
 
                     Console.WriteLine("{0} {1} žánry: {2}", item.Name, item.Country,String.Join(", ", item.Genre));
@@ -68,7 +68,7 @@ namespace VyberFilmu
            
         }
 
-        public class RootObject
+        public class DatabazeFilmu
         {
             public List<Movie> Movies { get; set; }
         }
