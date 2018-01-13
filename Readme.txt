@@ -2,6 +2,7 @@ Popis programu:
 
 
 Na co jsem hrdá:
+	- Nauèila jsem se verzovat projekt v Gitu
 
 Co mì nejvíc potrápilo:
 	- Zjistit a provést serializaci dat z formátu JSON

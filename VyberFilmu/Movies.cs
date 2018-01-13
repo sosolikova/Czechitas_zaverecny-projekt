@@ -26,8 +26,6 @@ namespace VyberFilmu
 
                 foreach (Movie item in databaze.Movies)
                 {
-
-
                     foreach (string genre in item.Genre)
                     {
                         if (!unikatniSeznamZanru.ContainsKey(genre))
@@ -62,14 +60,15 @@ namespace VyberFilmu
 
             return listNahodnych;
         }
-        public List<string> NahodnyVyberZemi()
-        {
-            return NahodnyVyber(unikatniSeznamZemi);
-        }
 
         public List<string> NahodnyVyberZanru()
         {
             return NahodnyVyber(unikatniSeznamZanru);
+        }
+
+        public List<string> NahodnyVyberZemi()
+        {
+            return NahodnyVyber(unikatniSeznamZemi);
         }
 
         public Movie NahodnyVyberFilmuDleUzivatelskychParametru(string genre, string country)
@@ -81,7 +80,6 @@ namespace VyberFilmu
                 {
                     listFilmuSplnujicichPodminky.Add(film);
                 }
-
             }
             if (listFilmuSplnujicichPodminky.Count < 1)
             {
