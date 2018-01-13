@@ -11,10 +11,9 @@ namespace VyberFilmu
             Movies movies = new Movies();
             movies.NactiFilmyZeSouboru();
 
-            var vylosovaneZeme = movies.NahodnyVyberZemi();
-            var vylosovanyZanr = movies.NahodnyVyberZanru();
-            string vybranaZemeUzivatelem = VolbaUzivateleZeSeznamu(vylosovaneZeme,"zemi");
-            string vybranyZanrUzivatelem = VolbaUzivateleZeSeznamu(vylosovanyZanr,"žánr");
+
+            string vybranaZemeUzivatelem = VolbaUzivateleZeSeznamu("zemi",movies);
+            string vybranyZanrUzivatelem = VolbaUzivateleZeSeznamu("žánr",movies);
 
             Movie filmNahodneZvolenyDleUzivatelskychParametru = movies.NahodnyVyberFilmuDleUzivatelskychParametru(vybranyZanrUzivatelem, vybranaZemeUzivatelem);
             if (filmNahodneZvolenyDleUzivatelskychParametru == null)
@@ -28,15 +27,26 @@ namespace VyberFilmu
 
             Console.ReadKey();
         }
-        
 
-        private static string VolbaUzivateleZeSeznamu(List<string> uzivatelskeVolby,string typVolby)
+        
+        private static string VolbaUzivateleZeSeznamu(string typVolby,Movies movies)
         {
             int vstupOdUzivatele = 0;
             string vyber = "";
-            
+            List<string> uzivatelskeVolby;
             do
             {
+                if (typVolby == "žánr")
+                {
+                    var vylosovanyZanr = movies.NahodnyVyberZanru();
+                    uzivatelskeVolby = vylosovanyZanr;
+                }
+                else
+                {
+                    var vylosovaneZeme = movies.NahodnyVyberZemi();
+                    uzivatelskeVolby = vylosovaneZeme;
+                }
+
                 Console.WriteLine("Vyberte si {0}: \n\t 1. {1} \n\t 2. {2} \n\t 3. Opakování volby", typVolby, uzivatelskeVolby[0], uzivatelskeVolby[1]);
                 vstupOdUzivatele = Int32.Parse(Console.ReadLine());
 
