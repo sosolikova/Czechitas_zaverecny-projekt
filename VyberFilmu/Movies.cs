@@ -76,7 +76,17 @@ namespace VyberFilmu
                     }
                 }
 
-                
+                var unikatniSeznamZemi = new Dictionary<string, string>();
+                foreach (Movie item in databaze.Movies)
+                {
+                    if (!unikatniSeznamZemi.ContainsKey(item.Country))
+                    {
+                        unikatniSeznamZemi.Add(item.Country, item.Country);
+                    }
+
+                }
+
+
             }
            
         }
