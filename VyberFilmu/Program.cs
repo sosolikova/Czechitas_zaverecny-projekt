@@ -20,7 +20,9 @@ namespace VyberFilmu
 
 
             var vylosovaneZeme = movies.NahodnyVyberZemi();
+            var vylosovanyZanr = movies.NahodnyVyberZanru();
             string vybranaZemeUzivatelem = VolbaUzivateleZeSeznamu(vylosovaneZeme,"zemi");
+            string vybranyZanrUzivatelem = VolbaUzivateleZeSeznamu(vylosovanyZanr,"žánr");
 
             int volbaMenu = 0;
             do
