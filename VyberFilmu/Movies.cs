@@ -66,7 +66,7 @@ namespace VyberFilmu
                 foreach (Movie item in databaze.Movies)
                 {
 
-                    //Console.WriteLine("{0} {1} žánry: {2}", item.Name, item.Country,String.Join(", ", item.Genre));
+                    
                     foreach (string genre in item.Genre)
                     {
                         if (!unikatniSeznamZanru.ContainsKey(genre))
@@ -102,6 +102,20 @@ namespace VyberFilmu
             nahodneCislo = losovani.Next(unikatniSeznamZanru.Count);
             listNahodnych.Add(unikatniSeznamZanru.ToArray()[nahodneCislo].Value);
             return listNahodnych;
+        }
+        public Movie NahodnyVyberFilmuDleUzivatelskychParametru(string genre, string country)
+        {
+            List<Movie> listFilmuSplnujicichPodminky = new List<Movie>();
+            foreach (Movie film in databaze.Movies)
+            {
+                if (country == film.Country && film.Genre.Contains(genre))
+                {
+                    listFilmuSplnujicichPodminky.Add(film);
+                }
+            }
+            var nahodneCislo = losovani.Next(listFilmuSplnujicichPodminky.Count);
+            
+            return listFilmuSplnujicichPodminky[nahodneCislo];
         }
 
         public class DatabazeFilmu

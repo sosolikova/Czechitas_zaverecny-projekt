@@ -15,14 +15,17 @@ namespace VyberFilmu
         {
             Movies movies = new Movies();
             movies.NactiFilmyZeSouboru();
-            movies.NahodnyVyberZanru();
+           
             
-
+            
 
             var vylosovaneZeme = movies.NahodnyVyberZemi();
             var vylosovanyZanr = movies.NahodnyVyberZanru();
             string vybranaZemeUzivatelem = VolbaUzivateleZeSeznamu(vylosovaneZeme,"zemi");
             string vybranyZanrUzivatelem = VolbaUzivateleZeSeznamu(vylosovanyZanr,"žánr");
+
+            Movie filmNahodneZvolenyDleUzivatelskychParametru = movies.NahodnyVyberFilmuDleUzivatelskychParametru(vybranyZanrUzivatelem, vybranaZemeUzivatelem);
+            Console.WriteLine("{0} {1} žánry: {2}", filmNahodneZvolenyDleUzivatelskychParametru.Name, filmNahodneZvolenyDleUzivatelskychParametru.Country,String.Join(", ", filmNahodneZvolenyDleUzivatelskychParametru.Genre));
 
             int volbaMenu = 0;
             do
@@ -48,7 +51,9 @@ namespace VyberFilmu
                 }
 
             } while (volbaMenu != 4);
+            Console.ReadKey();
         }
+        
 
         private static string VolbaUzivateleZeSeznamu(List<string> uzivatelskeVolby,string typVolby)
         {
