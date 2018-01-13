@@ -1,36 +1,36 @@
 POPIS PROGRAMU:
-Program slouí k doporuèení náhodného filmu na základì uivatelem zvoleného ánru a zemì pùvodu filmu. 
-	- Program po spuštìní uivateli nabídne nejprve ze dvou náhodnıch ánrù, a poté ze dvou náhodnıch zemí.
-	- Na základì uivatelské volby program nabízí tolik náhodnıch voleb, ne si uivatel vybere.
-	- Po doporuèení filmu programem dostane uivatel volbu celı proces zopakovat.
-	- Seznam filmù je naèítán ze souboru Movies.json.
+Program slouÅ¾Ã­ k doporuÄenÃ­ nÃ¡hodnÃ©ho filmu na zÃ¡kladÄ› uÅ¾ivatelem zvolenÃ©ho Å¾Ã¡nru a zemÄ› pÅ¯vodu filmu. 
+	- Program po spuÅ¡tÄ›nÃ­ uÅ¾ivateli nabÃ­dne nejprve ze dvou nÃ¡hodnÃ½ch Å¾Ã¡nrÅ¯, a potÃ© ze dvou nÃ¡hodnÃ½ch zemÃ­.
+	- Na zÃ¡kladÄ› uÅ¾ivatelskÃ© volby program nabÃ­zÃ­ tolik nÃ¡hodnÃ½ch voleb, neÅ¾ si uÅ¾ivatel vybere.
+	- Po doporuÄenÃ­ filmu programem dostane uÅ¾ivatel volbu celÃ½ proces zopakovat.
+	- Seznam filmÅ¯ je naÄÃ­tÃ¡n ze souboru Movies.json.
 
-NA CO JSEM HRDÁ:
-	- Nauèila jsem se verzovat projekt v Gitu
-	- Poprala jsem s naèítáním JSON
+NA CO JSEM HRDÃ:
+	- NauÄila jsem se verzovat projekt v Gitu
+	- Poprala jsem s naÄÃ­tÃ¡nÃ­m JSON
 
-CO MÌ NEJVÍCE POTRÁPILO:
-	- Zjistit a provést serializaci dat z formátu JSON
-	- Projekt byl pro mne hodnì sloitı. Bylo potøeba spoustu vìcí samostatnì dostudovat a hledat pomoc.
+CO MÄš NEJVÃCE POTRÃPILO:
+	- Zjistit a provÃ©st serializaci dat z formÃ¡tu JSON
+	- Projekt byl pro mne hodnÄ› sloÅ¾itÃ½. Bylo potÅ™eba spoustu vÄ›cÃ­ samostatnÄ› dostudovat a hledat pomoc.
 
-KDE BYLO NEJVÍCE CHYB:
-Bylo nutné ošetøit problémy:
-	- V pøípadì, e uivatel zvolil takovou kombinaci ánru a zemì, a v seznamu filmù neexistuje takovı, kterı by splòoval obì kritéria, program spadl.
-	- Vzhledem k tomu, e pracujeme s pomìrnì malım seznamem ánrù a zemí docházelo k tomu, e se náhodnì vybraly v jedné volbì 2 stejné poloky (napø. USA, USA).
-	- Zajistit, aby pøi zadávání volby uivatele pro opakování celého programu vıbìru filmu "A" nezáleelo na tom, zda se zadá "a" èi "A".
+KDE BYLO NEJVÃCE CHYB:
+Bylo nutnÃ© oÅ¡etÅ™it problÃ©my:
+	- V pÅ™Ã­padÄ›, Å¾e uÅ¾ivatel zvolil takovou kombinaci Å¾Ã¡nru a zemÄ›, a v seznamu filmÅ¯ neexistuje takovÃ½, kterÃ½ by splÅˆoval obÄ› kritÃ©ria, program spadl.
+	- Vzhledem k tomu, Å¾e pracujeme s pomÄ›rnÄ› malÃ½m seznamem Å¾Ã¡nrÅ¯ a zemÃ­ dochÃ¡zelo k tomu, Å¾e se nÃ¡hodnÄ› vybraly v jednÃ© volbÄ› 2 stejnÃ© poloÅ¾ky (napÅ™. USA, USA).
+	- Zajistit, aby pÅ™i zadÃ¡vÃ¡nÃ­ volby uÅ¾ivatele pro opakovÃ¡nÃ­ celÃ©ho programu vÃ½bÄ›ru filmu "A" nezÃ¡leÅ¾elo na tom, zda se zadÃ¡ "a" Äi "A".
 
-KDE JE PROSTOR NA ZLEPŠENÍ:
-	- Ošetøit to, e po zvolení ánru se pro uivatelskou volbu nabídnou jen ty zemì, které odpovídají filmùm, je databáze filmù obsahuje. 
-	- Dle zadání má program umonit a 3 x zmìnu náhodné volby, v mém programu je uivateli umonìno provést tolik náhodnıch voleb, ne si vybere (ánr nebo zemi).
+KDE JE PROSTOR NA ZLEPÅ ENÃ:
+	- OÅ¡etÅ™it to, Å¾e po zvolenÃ­ Å¾Ã¡nru se pro uÅ¾ivatelskou volbu nabÃ­dnou jen ty zemÄ›, kterÃ© odpovÃ­dajÃ­ filmÅ¯m, jeÅ¾ databÃ¡ze filmÅ¯ obsahuje. 
+	- Dle zadÃ¡nÃ­ mÃ¡ program umoÅ¾nit aÅ¾ 3 x zmÄ›nu nÃ¡hodnÃ© volby, v mÃ©m programu je uÅ¾ivateli umoÅ¾nÄ›no provÃ©st tolik nÃ¡hodnÃ½ch voleb, neÅ¾ si vybere (Å¾Ã¡nr nebo zemi).
 
-MONOSTI ROZŠÍØENÍ PROGRAMU:
-	- Zadávání novıch filmù a naèítání do seznamu filmù
-	- Umonìní úpravy jednotlivıch filmù
+MOÅ½NOSTI ROZÅ ÃÅ˜ENÃ PROGRAMU:
+	- ZadÃ¡vÃ¡nÃ­ novÃ½ch filmÅ¯ a naÄÃ­tÃ¡nÃ­ do seznamu filmÅ¯
+	- UmoÅ¾nÄ›nÃ­ Ãºpravy jednotlivÃ½ch filmÅ¯
 
-ÚPLNÉ ZADÁNÍ ÚKOLU:
-Vytvoøte program, kterı uivateli doporuèí náhodnı film na základì ánru a zemì pùvodu. Hotovı program nahrajte do Gitu.
-	- Program po spuštìní uivateli nabídne nejprve ze dvou náhodnıch ánrù, a poté ze dvou náhodnıch zemí. 
-	- Na základì uivatelské volby program nabídne a tøi náhodné volby.
-	- Uivatel dostane volbu celı proces zopakovat.
-	- Seznam filmù ètìte ze souboru Movies.json (https://gitlab.com/VojtekZak/MoviesJson)
-	- Bonus: Implementujte monost pøidat novı film. Tento se pøidá do seznamu filmù v souboru.  
+ÃšPLNÃ‰ ZADÃNÃ ÃšKOLU:
+VytvoÅ™te program, kterÃ½ uÅ¾ivateli doporuÄÃ­ nÃ¡hodnÃ½ film na zÃ¡kladÄ› Å¾Ã¡nru a zemÄ› pÅ¯vodu. HotovÃ½ program nahrajte do Gitu.
+	- Program po spuÅ¡tÄ›nÃ­ uÅ¾ivateli nabÃ­dne nejprve ze dvou nÃ¡hodnÃ½ch Å¾Ã¡nrÅ¯, a potÃ© ze dvou nÃ¡hodnÃ½ch zemÃ­. 
+	- Na zÃ¡kladÄ› uÅ¾ivatelskÃ© volby program nabÃ­dne aÅ¾ tÅ™i nÃ¡hodnÃ© volby.
+	- UÅ¾ivatel dostane volbu celÃ½ proces zopakovat.
+	- Seznam filmÅ¯ ÄtÄ›te ze souboru Movies.json (https://gitlab.com/VojtekZak/MoviesJson)
+	- Bonus: Implementujte moÅ¾nost pÅ™idat novÃ½ film. Tento se pÅ™idÃ¡ do seznamu filmÅ¯ v souboru.  
