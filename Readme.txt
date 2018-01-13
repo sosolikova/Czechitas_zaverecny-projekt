@@ -17,7 +17,7 @@ KDE BYLO NEJVÍCE CHYB:
 Bylo nutné ošetøit problémy:
 	- V pøípadì, že uživatel zvolil takovou kombinaci žánru a zemì, a v seznamu filmù neexistuje takový, který by splòoval obì kritéria, program spadl.
 	- Vzhledem k tomu, že pracujeme s pomìrnì malým seznamem žánrù a zemí docházelo k tomu, že se náhodnì vybraly v jedné volbì 2 stejné položky (napø. USA, USA).
-	- Zajistit, aby pøi zadávání volby uživatele pro opakování celého programu výbìru filmu "A" nezáleželo na tom, zda se zadá "a" èi "A"
+	- Zajistit, aby pøi zadávání volby uživatele pro opakování celého programu výbìru filmu "A" nezáleželo na tom, zda se zadá "a" èi "A".
 
 KDE JE PROSTOR NA ZLEPŠENÍ:
 	- Ošetøit to, že po zvolení žánru se pro uživatelskou volbu nabídnou jen ty zemì, které odpovídají filmùm, jež databáze filmù obsahuje. 
