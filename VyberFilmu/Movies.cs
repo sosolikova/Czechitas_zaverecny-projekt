@@ -47,10 +47,19 @@ namespace VyberFilmu
         private List<string> NahodnyVyber(Dictionary<string,string> unikatniSeznam)
         {
             List<string> listNahodnych = new List<string>();
-            var nahodneCislo = losovani.Next(unikatniSeznam.Count);
-            listNahodnych.Add(unikatniSeznam.ToArray()[nahodneCislo].Value);
-            nahodneCislo = losovani.Next(unikatniSeznam.Count);
-            listNahodnych.Add(unikatniSeznam.ToArray()[nahodneCislo].Value);
+
+            int nahodneCislo1;
+            int nahodneCislo2;
+            do
+            {
+                nahodneCislo1 = losovani.Next(unikatniSeznam.Count);
+                nahodneCislo2 = losovani.Next(unikatniSeznam.Count);
+  
+            } while (nahodneCislo1 == nahodneCislo2);
+
+            listNahodnych.Add(unikatniSeznam.ToArray()[nahodneCislo1].Value);
+            listNahodnych.Add(unikatniSeznam.ToArray()[nahodneCislo2].Value);
+
             return listNahodnych;
         }
         public List<string> NahodnyVyberZemi()
