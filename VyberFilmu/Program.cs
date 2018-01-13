@@ -15,9 +15,28 @@ namespace VyberFilmu
         {
             Movies movies = new Movies();
             movies.NactiFilmyZeSouboru();
-            movies.NahodnyVyberZemi();
+            var vylosovaneZeme = movies.NahodnyVyberZemi();
+
             movies.NahodnyVyberZanru();
-            
+            int vybranaVolba = 0;
+            string vybranyZanr = "";
+            do
+            {
+                Console.WriteLine("Vyberte si žánr: \n\t 1. {0} \n\t 2. {1} \n\t 3. Opakování volby", vylosovaneZeme[0], vylosovaneZeme[1]);
+                vybranaVolba = Int32.Parse(Console.ReadLine());
+
+                switch (vybranaVolba)
+                {
+                    case 1:
+                        vybranyZanr = vylosovaneZeme[0];
+                        break;
+                    case 2:
+                        vybranyZanr = vylosovaneZeme[1];
+                        break;
+                }
+
+            } while (vybranyZanr == "");
+
             int volbaMenu = 0;
             do
             {
