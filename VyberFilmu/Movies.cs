@@ -66,34 +66,20 @@ namespace VyberFilmu
                 {
 
                     Console.WriteLine("{0} {1} žánry: {2}", item.Name, item.Country,String.Join(", ", item.Genre));
-                }
-                
-                foreach (Movie item in databaze.Movies)
-                {
                     foreach (string genre in item.Genre)
                     {
-                        if (! unikatniSeznamZanru.ContainsKey(genre)) 
+                        if (!unikatniSeznamZanru.ContainsKey(genre))
                         {
                             unikatniSeznamZanru.Add(genre, genre);
-                        }  
+                        }
                     }
-                }
 
-                
-                foreach (Movie item in databaze.Movies)
-                {
                     if (!unikatniSeznamZemi.ContainsKey(item.Country))
                     {
                         unikatniSeznamZemi.Add(item.Country, item.Country);
                     }
-
                 }
-
-
-                
-
-            }
-           
+            }          
         }
 
         public List<string> NahodnyVyberZemi()
