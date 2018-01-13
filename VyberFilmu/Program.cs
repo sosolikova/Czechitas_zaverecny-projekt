@@ -25,7 +25,14 @@ namespace VyberFilmu
             string vybranyZanrUzivatelem = VolbaUzivateleZeSeznamu(vylosovanyZanr,"žánr");
 
             Movie filmNahodneZvolenyDleUzivatelskychParametru = movies.NahodnyVyberFilmuDleUzivatelskychParametru(vybranyZanrUzivatelem, vybranaZemeUzivatelem);
-            Console.WriteLine("{0} {1} žánry: {2}", filmNahodneZvolenyDleUzivatelskychParametru.Name, filmNahodneZvolenyDleUzivatelskychParametru.Country,String.Join(", ", filmNahodneZvolenyDleUzivatelskychParametru.Genre));
+            if (filmNahodneZvolenyDleUzivatelskychParametru == null)
+            {
+                Console.WriteLine("Film splňující vaše požadavky bohužel v databázi nemáte");
+            }
+            else
+            {
+                Console.WriteLine("{0} {1} žánry: {2}", filmNahodneZvolenyDleUzivatelskychParametru.Name, filmNahodneZvolenyDleUzivatelskychParametru.Country, String.Join(", ", filmNahodneZvolenyDleUzivatelskychParametru.Genre));
+            }
 
             int volbaMenu = 0;
             do

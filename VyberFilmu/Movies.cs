@@ -112,10 +112,20 @@ namespace VyberFilmu
                 {
                     listFilmuSplnujicichPodminky.Add(film);
                 }
+
             }
-            var nahodneCislo = losovani.Next(listFilmuSplnujicichPodminky.Count);
+            if (listFilmuSplnujicichPodminky.Count < 1)
+            {               
+                return null;
+            }
+            else
+            {
+                var nahodneCislo = losovani.Next(listFilmuSplnujicichPodminky.Count);
+                return listFilmuSplnujicichPodminky[nahodneCislo];
+            }
             
-            return listFilmuSplnujicichPodminky[nahodneCislo];
+            
+            
         }
 
         public class DatabazeFilmu
