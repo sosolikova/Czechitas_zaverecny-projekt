@@ -18,6 +18,7 @@ namespace VyberFilmu
         private List<Movie> movies;
         private Dictionary<string,string> unikatniSeznamZanru = new Dictionary<string, string>();
         private Dictionary<string, string> unikatniSeznamZemi = new Dictionary<string, string>();
+        private Random losovani = new Random();
 
         public Movies()
         {
@@ -98,7 +99,6 @@ namespace VyberFilmu
         public List<string> NahodnyVyberZemi()
         {
             List<string> listNahodnychZemi = new List<string>();
-            var losovani = new Random();
             var nahodneCislo = losovani.Next(unikatniSeznamZemi.Count);
             listNahodnychZemi.Add(unikatniSeznamZemi.ToArray()[nahodneCislo].Value);
             nahodneCislo = losovani.Next(unikatniSeznamZemi.Count);
@@ -109,7 +109,7 @@ namespace VyberFilmu
         public List<string> NahodnyVyberZanru()
         {
             List<string> listNahodnych = new List<string>();
-            var losovani = new Random();
+            
             var nahodneCislo = losovani.Next(unikatniSeznamZanru.Count);
             listNahodnych.Add(unikatniSeznamZanru.ToArray()[nahodneCislo].Value);
             nahodneCislo = losovani.Next(unikatniSeznamZanru.Count);
