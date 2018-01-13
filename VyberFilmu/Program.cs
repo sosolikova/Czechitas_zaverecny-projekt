@@ -15,14 +15,14 @@ namespace VyberFilmu
                 Movies movies = new Movies();
                 movies.NactiFilmyZeSouboru();
 
-
-                string vybranaZemeUzivatelem = VolbaUzivateleZeSeznamu("zemi", movies);
                 string vybranyZanrUzivatelem = VolbaUzivateleZeSeznamu("žánr", movies);
+                string vybranaZemeUzivatelem = VolbaUzivateleZeSeznamu("zemi", movies);
+                
 
                 Movie filmNahodneZvolenyDleUzivatelskychParametru = movies.NahodnyVyberFilmuDleUzivatelskychParametru(vybranyZanrUzivatelem, vybranaZemeUzivatelem);
                 if (filmNahodneZvolenyDleUzivatelskychParametru == null)
                 {
-                    Console.WriteLine("Film splňující vaše požadavky bohužel v databázi nemáte\n");
+                    Console.WriteLine("Film splňující vaše požadavky bohužel v databázi nemáte.\n");
                 }
                 else
                 {
