@@ -8,22 +8,30 @@ namespace VyberFilmu
     {
         static void Main(string[] args)
         {
-            Movies movies = new Movies();
-            movies.NactiFilmyZeSouboru();
+            string provestOpakovani;
 
-
-            string vybranaZemeUzivatelem = VolbaUzivateleZeSeznamu("zemi",movies);
-            string vybranyZanrUzivatelem = VolbaUzivateleZeSeznamu("žánr",movies);
-
-            Movie filmNahodneZvolenyDleUzivatelskychParametru = movies.NahodnyVyberFilmuDleUzivatelskychParametru(vybranyZanrUzivatelem, vybranaZemeUzivatelem);
-            if (filmNahodneZvolenyDleUzivatelskychParametru == null)
+            do
             {
-                Console.WriteLine("Film splňující vaše požadavky bohužel v databázi nemáte");
-            }
-            else
-            {
-                Console.WriteLine("{0} {1} žánry: {2}", filmNahodneZvolenyDleUzivatelskychParametru.Name, filmNahodneZvolenyDleUzivatelskychParametru.Country, String.Join(", ", filmNahodneZvolenyDleUzivatelskychParametru.Genre));
-            }
+                Movies movies = new Movies();
+                movies.NactiFilmyZeSouboru();
+
+
+                string vybranaZemeUzivatelem = VolbaUzivateleZeSeznamu("zemi", movies);
+                string vybranyZanrUzivatelem = VolbaUzivateleZeSeznamu("žánr", movies);
+
+                Movie filmNahodneZvolenyDleUzivatelskychParametru = movies.NahodnyVyberFilmuDleUzivatelskychParametru(vybranyZanrUzivatelem, vybranaZemeUzivatelem);
+                if (filmNahodneZvolenyDleUzivatelskychParametru == null)
+                {
+                    Console.WriteLine("Film splňující vaše požadavky bohužel v databázi nemáte");
+                }
+                else
+                {
+                    Console.WriteLine("{0} {1} žánry: {2}", filmNahodneZvolenyDleUzivatelskychParametru.Name, filmNahodneZvolenyDleUzivatelskychParametru.Country, String.Join(", ", filmNahodneZvolenyDleUzivatelskychParametru.Genre));
+                }
+                Console.WriteLine("Přejete si opakovat volbu filmu? \t Pokud ano, stiskněte A");
+                provestOpakovani = Console.ReadLine();
+
+            } while (provestOpakovani == "A");
 
             Console.ReadKey();
         }
@@ -48,7 +56,11 @@ namespace VyberFilmu
                 }
 
                 Console.WriteLine("Vyberte si {0}: \n\t 1. {1} \n\t 2. {2} \n\t 3. Opakování volby", typVolby, uzivatelskeVolby[0], uzivatelskeVolby[1]);
-                vstupOdUzivatele = Int32.Parse(Console.ReadLine());
+                var nactena = Console.ReadLine();
+                if (Int32.TryParse(nactena,out vstupOdUzivatele))
+                {
+                    vyber = "";
+                }       
 
                 switch (vstupOdUzivatele)
                 {
