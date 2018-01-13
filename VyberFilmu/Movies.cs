@@ -16,6 +16,8 @@ namespace VyberFilmu
     class Movies
     {
         private List<Movie> movies;
+        private Dictionary<string,string> unikatniSeznamZanru = new Dictionary<string, string>();
+        private Dictionary<string, string> unikatniSeznamZemi = new Dictionary<string, string>();
 
         public Movies()
         {
@@ -64,7 +66,7 @@ namespace VyberFilmu
 
                     Console.WriteLine("{0} {1} žánry: {2}", item.Name, item.Country,String.Join(", ", item.Genre));
                 }
-                var unikatniSeznamZanru = new Dictionary<string, string>();
+                
                 foreach (Movie item in databaze.Movies)
                 {
                     foreach (string genre in item.Genre)
@@ -76,7 +78,7 @@ namespace VyberFilmu
                     }
                 }
 
-                var unikatniSeznamZemi = new Dictionary<string, string>();
+                
                 foreach (Movie item in databaze.Movies)
                 {
                     if (!unikatniSeznamZemi.ContainsKey(item.Country))
@@ -87,10 +89,23 @@ namespace VyberFilmu
                 }
 
 
+                
+
             }
            
         }
 
+        public List<string> NahodnyVyberZemi()
+        {
+            List<string> listNahodnychZemi = new List<string>();
+            var losovani = new Random();
+            var nahodneCislo = losovani.Next(unikatniSeznamZemi.Count);
+            listNahodnychZemi.Add(unikatniSeznamZemi.ToArray()[nahodneCislo].Value);
+            nahodneCislo = losovani.Next(unikatniSeznamZemi.Count);
+            listNahodnychZemi.Add(unikatniSeznamZemi.ToArray()[nahodneCislo].Value);
+            return listNahodnychZemi;
+
+        }
 
         public class DatabazeFilmu
         {

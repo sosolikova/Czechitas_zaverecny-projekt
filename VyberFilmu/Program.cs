@@ -15,6 +15,7 @@ namespace VyberFilmu
         {
             Movies movies = new Movies();
             movies.NactiFilmyZeSouboru();
+            movies.NahodnyVyberZemi();
             
             int volbaMenu = 0;
             do
