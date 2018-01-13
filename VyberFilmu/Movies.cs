@@ -104,7 +104,17 @@ namespace VyberFilmu
             nahodneCislo = losovani.Next(unikatniSeznamZemi.Count);
             listNahodnychZemi.Add(unikatniSeznamZemi.ToArray()[nahodneCislo].Value);
             return listNahodnychZemi;
+        }
 
+        public List<string> NahodnyVyberZanru()
+        {
+            List<string> listNahodnych = new List<string>();
+            var losovani = new Random();
+            var nahodneCislo = losovani.Next(unikatniSeznamZanru.Count);
+            listNahodnych.Add(unikatniSeznamZanru.ToArray()[nahodneCislo].Value);
+            nahodneCislo = losovani.Next(unikatniSeznamZanru.Count);
+            listNahodnych.Add(unikatniSeznamZanru.ToArray()[nahodneCislo].Value);
+            return listNahodnych;
         }
 
         public class DatabazeFilmu
