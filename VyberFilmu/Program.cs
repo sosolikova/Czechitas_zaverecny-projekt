@@ -30,9 +30,9 @@ namespace VyberFilmu
                     Console.WriteLine("\tNázev:\t{0} \n\tZemě:\t{1} \n\tŽánry:\t{2}", filmNahodneZvolenyDleUzivatelskychParametru.Name, filmNahodneZvolenyDleUzivatelskychParametru.Country, String.Join(", ", filmNahodneZvolenyDleUzivatelskychParametru.Genre));
                 }
                 Console.WriteLine("\nPřejete si opakovat volbu filmu? \nPokud ano, stiskněte A, pokud ne stiskněte jakoukoliv klávesu.");
-                provestOpakovani = Console.ReadLine();
+                provestOpakovani = Console.ReadLine().ToLower();
 
-            } while (provestOpakovani == "A");
+            } while (provestOpakovani == "a");
         }
 
         private static string VolbaUzivateleZeSeznamu(string typVolby,Movies movies)
