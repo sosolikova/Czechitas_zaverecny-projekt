@@ -22,18 +22,17 @@ namespace VyberFilmu
                 Movie filmNahodneZvolenyDleUzivatelskychParametru = movies.NahodnyVyberFilmuDleUzivatelskychParametru(vybranyZanrUzivatelem, vybranaZemeUzivatelem);
                 if (filmNahodneZvolenyDleUzivatelskychParametru == null)
                 {
-                    Console.WriteLine("Film splňující vaše požadavky bohužel v databázi nemáte");
+                    Console.WriteLine("Film splňující vaše požadavky bohužel v databázi nemáte\n");
                 }
                 else
                 {
                     Console.WriteLine("{0} {1} žánry: {2}", filmNahodneZvolenyDleUzivatelskychParametru.Name, filmNahodneZvolenyDleUzivatelskychParametru.Country, String.Join(", ", filmNahodneZvolenyDleUzivatelskychParametru.Genre));
                 }
-                Console.WriteLine("Přejete si opakovat volbu filmu? \t Pokud ano, stiskněte A");
+                Console.WriteLine("Přejete si opakovat volbu filmu? \nPokud ano, stiskněte A, pokud ne stiskněte jakoukoliv klávesu.");
                 provestOpakovani = Console.ReadLine();
 
             } while (provestOpakovani == "A");
 
-            Console.ReadKey();
         }
 
         
