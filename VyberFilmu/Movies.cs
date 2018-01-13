@@ -44,26 +44,25 @@ namespace VyberFilmu
             }
         }
 
+        private List<string> NahodnyVyber(Dictionary<string,string> unikatniSeznam)
+        {
+            List<string> listNahodnych = new List<string>();
+            var nahodneCislo = losovani.Next(unikatniSeznam.Count);
+            listNahodnych.Add(unikatniSeznam.ToArray()[nahodneCislo].Value);
+            nahodneCislo = losovani.Next(unikatniSeznam.Count);
+            listNahodnych.Add(unikatniSeznam.ToArray()[nahodneCislo].Value);
+            return listNahodnych;
+        }
         public List<string> NahodnyVyberZemi()
         {
-            List<string> listNahodnychZemi = new List<string>();
-            var nahodneCislo = losovani.Next(unikatniSeznamZemi.Count);
-            listNahodnychZemi.Add(unikatniSeznamZemi.ToArray()[nahodneCislo].Value);
-            nahodneCislo = losovani.Next(unikatniSeznamZemi.Count);
-            listNahodnychZemi.Add(unikatniSeznamZemi.ToArray()[nahodneCislo].Value);
-            return listNahodnychZemi;
+            return NahodnyVyber(unikatniSeznamZemi);
         }
 
         public List<string> NahodnyVyberZanru()
         {
-            List<string> listNahodnych = new List<string>();
-
-            var nahodneCislo = losovani.Next(unikatniSeznamZanru.Count);
-            listNahodnych.Add(unikatniSeznamZanru.ToArray()[nahodneCislo].Value);
-            nahodneCislo = losovani.Next(unikatniSeznamZanru.Count);
-            listNahodnych.Add(unikatniSeznamZanru.ToArray()[nahodneCislo].Value);
-            return listNahodnych;
+            return NahodnyVyber(unikatniSeznamZanru);
         }
+
         public Movie NahodnyVyberFilmuDleUzivatelskychParametru(string genre, string country)
         {
             List<Movie> listFilmuSplnujicichPodminky = new List<Movie>();
