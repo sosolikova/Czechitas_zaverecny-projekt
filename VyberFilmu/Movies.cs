@@ -19,6 +19,7 @@ namespace VyberFilmu
         private Dictionary<string,string> unikatniSeznamZanru = new Dictionary<string, string>();
         private Dictionary<string, string> unikatniSeznamZemi = new Dictionary<string, string>();
         private Random losovani = new Random();
+        private DatabazeFilmu databaze;
 
         public Movies()
         {
@@ -59,13 +60,13 @@ namespace VyberFilmu
             using (StreamReader r = new StreamReader("Movies.json"))
             {
                 string json = r.ReadToEnd();
-                DatabazeFilmu databaze = JsonConvert.DeserializeObject<DatabazeFilmu>(json);
+                databaze = JsonConvert.DeserializeObject<DatabazeFilmu>(json);
                 Console.WriteLine($"Bylo nacteno {databaze.Movies.Count} filmu");
 
                 foreach (Movie item in databaze.Movies)
                 {
 
-                    Console.WriteLine("{0} {1} žánry: {2}", item.Name, item.Country,String.Join(", ", item.Genre));
+                    //Console.WriteLine("{0} {1} žánry: {2}", item.Name, item.Country,String.Join(", ", item.Genre));
                     foreach (string genre in item.Genre)
                     {
                         if (!unikatniSeznamZanru.ContainsKey(genre))
