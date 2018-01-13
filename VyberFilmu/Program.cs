@@ -16,10 +16,11 @@ namespace VyberFilmu
             Movies movies = new Movies();
             movies.NactiFilmyZeSouboru();
             movies.NahodnyVyberZanru();
+            
 
 
             var vylosovaneZeme = movies.NahodnyVyberZemi();
-            string vybranaZemeUzivatelem = VyberUzivateleZeme(vylosovaneZeme);
+            string vybranaZemeUzivatelem = VolbaUzivateleZeSeznamu(vylosovaneZeme,"zemi");
 
             int volbaMenu = 0;
             do
@@ -47,27 +48,28 @@ namespace VyberFilmu
             } while (volbaMenu != 4);
         }
 
-        private static string VyberUzivateleZeme(List<string> vylosovaneZeme)
+        private static string VolbaUzivateleZeSeznamu(List<string> uzivatelskeVolby,string typVolby)
         {
-            int vybranaVolba = 0;
-            string vybranyZanr = "";
+            int vstupOdUzivatele = 0;
+            string vyber = "";
+            
             do
             {
-                Console.WriteLine("Vyberte si žánr: \n\t 1. {0} \n\t 2. {1} \n\t 3. Opakování volby", vylosovaneZeme[0], vylosovaneZeme[1]);
-                vybranaVolba = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("Vyberte si {0}: \n\t 1. {1} \n\t 2. {2} \n\t 3. Opakování volby", typVolby, uzivatelskeVolby[0], uzivatelskeVolby[1]);
+                vstupOdUzivatele = Int32.Parse(Console.ReadLine());
 
-                switch (vybranaVolba)
+                switch (vstupOdUzivatele)
                 {
                     case 1:
-                        vybranyZanr = vylosovaneZeme[0];
+                        vyber = uzivatelskeVolby[0];
                         break;
                     case 2:
-                        vybranyZanr = vylosovaneZeme[1];
+                        vyber = uzivatelskeVolby[1];
                         break;
                 }
 
-            } while (vybranyZanr == "");
-            return vybranyZanr;
+            } while (vyber == "");
+            return vyber;
         }
     }
 }
