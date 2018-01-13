@@ -64,9 +64,23 @@ namespace VyberFilmu
 
                     Console.WriteLine("{0} {1} žánry: {2}", item.Name, item.Country,String.Join(", ", item.Genre));
                 }
+                var unikatniSeznamZanru = new Dictionary<string, string>();
+                foreach (Movie item in databaze.Movies)
+                {
+                    foreach (string genre in item.Genre)
+                    {
+                        if (! unikatniSeznamZanru.ContainsKey(genre)) 
+                        {
+                            unikatniSeznamZanru.Add(genre, genre);
+                        }  
+                    }
+                }
+
+                
             }
            
         }
+
 
         public class DatabazeFilmu
         {

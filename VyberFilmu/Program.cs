@@ -14,8 +14,8 @@ namespace VyberFilmu
         static void Main(string[] args)
         {
             Movies movies = new Movies();
-
-
+            movies.NactiFilmyZeSouboru();
+            
             int volbaMenu = 0;
             do
             {
