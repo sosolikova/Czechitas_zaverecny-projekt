@@ -21,22 +21,5 @@ namespace VyberFilmu
             Country = country;
             Genre = genre;
         }
-
-
-        public void VypisPopis()
-        {
-            Console.WriteLine("Name: {0}", Name);
-            Console.WriteLine("\tCountry: {0}", Country);
-            for (int i = 0; i < Genre.Count; i++)
-            {
-                Console.WriteLine("\tGenre: {0}", Genre[i]);
-            }
-
-            
-        }
-
-
     }
-
-
 }

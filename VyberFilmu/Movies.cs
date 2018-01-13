@@ -22,7 +22,7 @@ namespace VyberFilmu
             {
                 string json = r.ReadToEnd();
                 databaze = JsonConvert.DeserializeObject<DatabazeFilmu>(json);
-                Console.WriteLine($"Bylo nacteno {databaze.Movies.Count} filmu");
+                Console.WriteLine($"Vaše databáze obsahuje {databaze.Movies.Count} filmů.\n");
 
                 foreach (Movie item in databaze.Movies)
                 {

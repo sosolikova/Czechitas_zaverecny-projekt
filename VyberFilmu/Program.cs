@@ -26,16 +26,15 @@ namespace VyberFilmu
                 }
                 else
                 {
-                    Console.WriteLine("{0} {1} žánry: {2}", filmNahodneZvolenyDleUzivatelskychParametru.Name, filmNahodneZvolenyDleUzivatelskychParametru.Country, String.Join(", ", filmNahodneZvolenyDleUzivatelskychParametru.Genre));
+                    Console.WriteLine("Vybraný film:");
+                    Console.WriteLine("\tNázev:\t{0} \n\tZemě:\t{1} \n\tŽánry:\t{2}", filmNahodneZvolenyDleUzivatelskychParametru.Name, filmNahodneZvolenyDleUzivatelskychParametru.Country, String.Join(", ", filmNahodneZvolenyDleUzivatelskychParametru.Genre));
                 }
-                Console.WriteLine("Přejete si opakovat volbu filmu? \nPokud ano, stiskněte A, pokud ne stiskněte jakoukoliv klávesu.");
+                Console.WriteLine("\nPřejete si opakovat volbu filmu? \nPokud ano, stiskněte A, pokud ne stiskněte jakoukoliv klávesu.");
                 provestOpakovani = Console.ReadLine();
 
             } while (provestOpakovani == "A");
-
         }
 
-        
         private static string VolbaUzivateleZeSeznamu(string typVolby,Movies movies)
         {
             int vstupOdUzivatele = 0;
